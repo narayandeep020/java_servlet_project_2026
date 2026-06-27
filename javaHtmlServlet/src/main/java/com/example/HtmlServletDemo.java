@@ -37,7 +37,7 @@ public class HtmlServletDemo extends HttpServlet {
 	 	  
 	 	   out.println("<html><body>");  
 	 	   out.println("Welcome to Index Servlet");  
-//	 	   out.println("<a href=\"/DeadLockServlet\"> Deadlock 1 </a>.");
+	 	    out.println("<a href=\"/javaHtmlServlet/DeadLockServlet\"> Deadlock1 </a>.");
 	 	   out.println("<a href=\"DeadLockServlet\"> Deadlock 2</a>");  
 		   out.println("<a href=\"./DeadLockServlet\"> Deadlock 3</a>");  
 	 	   out.println("<a href=\"DemoServlet\"> DemoServlet</a>");  
