@@ -26,8 +26,20 @@ public class HtmlServletDemo2 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        
+		out.println("<html><body>");
+		
+		out.println("<h2>Welcome to My Servlet Project</h2>\r\n"
+				+ "    <form action=\"HtmlServletDemo2\" method=\"get\">\r\n"
+				+ "        <input type=\"text\" name=\"username\" placeholder=\"Enter your name\">\r\n"
+				+ "        <input type=\"submit\" value=\"Submit\">\r\n"
+				+ "    </form>");
+		
+		out.println("</body></html>");
 	}
 
 	/**
