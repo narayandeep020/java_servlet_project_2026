@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>UserAppServlet</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+    
+       <context-param>  
+        <param-name>villageName</param-name>  
+        <param-value>Dhanedi-Kalan</param-value>  
+    </context-param> 
+     <context-param>  
+        <param-name>City</param-name>  
+        <param-value>Maiher</param-value>  
+    </context-param> 
+    
+    
+    <servlet>
+    <servlet-name>LoginServlet2</servlet-name>
+    <servlet-class>com.user.LoginServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet2</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <servlet-class>com.user.WelcomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <url-pattern>/welcome</url-pattern>
+  </servlet-mapping>
+ <servlet>
+    <servlet-name>AdminServlet</servlet-name>
+    <servlet-class>com.user.AdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminServlet</servlet-name>
+    <url-pattern>/admin</url-pattern>
+     <url-pattern>/admin/*</url-pattern>
+  </servlet-mapping>
+  
+ <servlet>  
+<description>Servlet-Configuration</description>
+<display-name>ServletConfig</display-name>
+<servlet-name>ServletCon</servlet-name>  
+<servlet-class>com.user.ServletCon</servlet-class>  
+  
+<init-param>  
+<param-name>system</param-name>  
+<param-value>HP-fboxxx</param-value>  
+</init-param>  
+  
+<init-param>  
+<param-name>password</param-name>  
+<param-value>oracle</param-value>  
+</init-param>  
+
+<init-param>  
+<param-name>window</param-name>  
+<param-value>12th-generation</param-value>  
+</init-param>
+
+ <load-on-startup>-1</load-on-startup>
+  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>ServletCon</servlet-name>  
+<url-pattern>/ServletCon</url-pattern>  
+</servlet-mapping>
+ 
+</web-app>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+		<form action="login" method="post">  
+		Name:<input type="text" name="username"/><br/>  
+		Password:<input type="password" name="userpass"/><br/>  
+		<input type="submit" value="login"/>  
+		</form>
+		
+  <br/> <br/>
+
+ <!-- Query parameter GET method  --> 
+ <a href="/UserAppServlet/login?username=Deep&address=Maiher&age=24" accesskey="1" title="Login Page">Login Get Query parameter</a>
+ 
+  <br/> <br/>
+   
+  <!-- Path parameter GET method  --> 
+ <a href="/UserAppServlet/admin/Deep/Maiher/24" accesskey="1" title="Admin page">Admin Get Path parameter</a>
+
+   <br/> <br/>
+   
+  <!-- Admin Page will not load because we did parameter check inside doget method  --> 
+ <a href="/UserAppServlet/admin" accesskey="1" title="Go to admin page">Admin page </a>
+ 
+ <br/> <br/>
+
+		<form action="search" method="get">
+			<input type="text" name="name"> 
+			<input type="submit" value="Google Search">
+		</form>
+		
+	 <br/> <br/>
+		
+ <a href="/UserAppServlet/user?name=Deepnarayan&address=Maiher" accesskey="1" title="User page">User Page</a>
+         
+     <br/> <br/>
+ <a href="/UserAppServlet/ServletCon" accesskey="1" title="ServletCon Page">ServletCon Page</a>
+
+
+</body>
+</html>
