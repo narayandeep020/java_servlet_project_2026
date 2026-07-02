@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cookies Tracking Techniques</title>
+</head>
+<body>
+
+	<h2>Cookies Form </h2>
+
+	<form action="cookies" method="post">  
+	clientName:<input type="text" name="userName"/><br/><br/>
+	clientPass:<input type="password" name="password"/><br/><br/>
+	clientId:<input type="text" name="userId"/><br/><br/> 
+	<input type="submit" value="go"/> 
+	</form>
+
+	<br/><br/>
+   <h2>Hidden Form Field</h2>
+
+	<form action="Hidden" method="post">  
+	userName:<input type="text" name="userName"/><br/><br/>
+	<input type="hidden" name="userId" value="Maiher19"/><br/><br/>  
+	<input type="submit" value="go"/>  
+	</form>  
+ 
+    <br/><br/>
+ 
+ 	<h3>URL Rewriting </h3>
+ 	
+	<form action="UrlRewriting" method="get">  
+	userName:<input type="text" name="userName"/><br/>  
+	<input type="submit" value="go"/>  
+	</form>
+	
+	<br/><br/>
+	
+	<h2>HttpSession Form </h2>
+
+	<form action="userSession" method="post">  
+	guestName:<input type="text" name="guestName"/><br/><br/>
+	guestPass:<input type="password" name="guestPass"/><br/><br/>
+	<input type="submit" value="GuestLogin"/> 
+	</form>
+
+</body>
+</html>
