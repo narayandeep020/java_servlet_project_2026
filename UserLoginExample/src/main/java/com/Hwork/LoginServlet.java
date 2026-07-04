@@ -2,6 +2,9 @@ package com.Hwork;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -43,12 +46,20 @@ public class LoginServlet extends HttpServlet {
 		        PrintWriter out = response.getWriter();  
 		          
 		        String name=request.getParameter("name");  
-		        String password=request.getParameter("password");
+		        String inputPassword=request.getParameter("password");
 		        
-	            HttpSession session=request.getSession();
-	            session.setAttribute("name",name);
+		        System.out.println("input password: "+inputPassword);
+	            
+	            String fromPasswordDb = getPasswordFormDb(name);
+	            
+	            System.out.println("input Dbpassword: "+fromPasswordDb);
+	            
 		            
-		        if(password.equals("admin123")){  
+		        if(inputPassword.equals(fromPasswordDb)){ 
+		        	
+		        	 HttpSession session=request.getSession();
+			         session.setAttribute("name",name);
+		        	
 		            out.print("Welcome, "+name);
 		            out.println("<br>"+"Login Successfully!");
 		            out.print("<br>");
@@ -58,12 +69,27 @@ public class LoginServlet extends HttpServlet {
 		                out.print("<br><br>");
 		                out.print(" <a href='/UserLoginExample/login.html' accesskey='1' title='Index Page'>Login</a>");
 		            }  
-		  
-		         
-		                  
+       
 		        out.close();  
 		  
 		                }catch(Exception e){System.out.println(e);}
+	}
+
+	public String getPasswordFormDb(String name) {
+		 String password = null;
+	        try (Connection con = DbConnection.getConnection()) {
+	            String sql = "SELECT pass_word FROM users WHERE username = ?";
+	            PreparedStatement ps = con.prepareStatement(sql);
+	            ps.setString(1, name);
+
+	            ResultSet rs = ps.executeQuery();
+	            if (rs.next()) {
+	                password = rs.getString("pass_word");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        return password;
 	}
 
 }
