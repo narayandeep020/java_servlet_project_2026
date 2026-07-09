@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin CRUD Example</title>
+</head>
+<body>
+<h2>Add New Admin</h2>
+
+<form action="saveAdmin" method="post">  
+<table>  
+<tr><td><input type='hidden' name='adminId' value='-1'/></tr>
+<tr><td>Name:</td><td><input type="text" name="adminName"/></td></tr>  
+<tr><td>Password:</td><td><input type="password" name="password"/></td></tr>  
+<tr><td>Email:</td><td><input type="email" name="mailId"/></td></tr>  
+<tr><td>Country:</td><td>  
+<select name="country" style="width:150px">  
+<option>India</option>  
+<option>USA</option>  
+<option>UK</option>  
+<option>Other</option>  
+</select>  
+</td></tr>  
+<tr><td colspan="2"><input type="submit" value="Save Admin"/></td></tr>  
+</table>  
+</form> 
+
+<br/>  <br/>  
+<a href="admin">View All Admin</a>  
+
+        <br/> <br/>
+
+		<form action="admin/viewById" method="get">
+			<input type="number" name="viewAdminId"> 
+			<input type="submit" value="View Admin By Id">
+		</form>
+		
+		  <br/> <br/>
+
+		<form action="admin/viewByName" method="get">
+			<input type="text" name="viewAdminName"> 
+			<input type="submit" value="View Admin By Name">
+		</form>
+
+		  <br/>  <br/>  
+          <a href="/ServletAdminCRUD/image">View Photo</a>
+
+</body>
+</html>
