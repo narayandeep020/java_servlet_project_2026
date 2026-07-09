@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Image Servlet Example</title>
+</head>
+<body>
+<h2>Add Image With Name</h2>
+
+     <form method="post" action="imgdemo" enctype="multipart/form-data">
+     <div>
+      <label>First Name:</label>
+      <input type="text" name="firstName" size="50" />
+     </div>
+     <br>
+     <div>
+      <label>Last Name:</label> 
+      <input type="text" name="lastName" size="50" />
+     </div>
+     <br>
+     <div>
+      <label>Upload Photo: </label> 
+      <input type="file" name="photo" size="50" />
+     </div>
+     <br>
+     <input type="submit" value="Save">
+    </form>
+    <br>
+    <hr>
+    <h2>Add File With Name</h2>
+    
+    <form action="upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file"/>
+    <input type="submit" value="Upload"/>
+    </form>
+    
+
+</body>
+</html>
