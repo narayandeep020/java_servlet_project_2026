@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>JSPCrud</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+  </welcome-file-list>
+  
+      <servlet>
+        <servlet-name>employeeJsp</servlet-name>
+        <jsp-file>/employee.jsp</jsp-file>
+    </servlet>
+
+    <!-- Map the first URL pattern POST-->
+    <servlet-mapping>
+        <servlet-name>employeeJsp</servlet-name>
+        <url-pattern>/saveEmployee</url-pattern>
+    </servlet-mapping>
+
+    <!-- Map the second URL pattern POST-->
+    <servlet-mapping>
+        <servlet-name>employeeJsp</servlet-name>
+        <url-pattern>/updateEmployee</url-pattern>
+    </servlet-mapping>
+    
+     <!-- Map multiple URL pattern PUT-->
+    <servlet-mapping>
+        <servlet-name>employeeJsp</servlet-name>
+        <url-pattern>/editEmployee</url-pattern>
+         <url-pattern>/deleteEmployee</url-pattern>
+    </servlet-mapping>
+
+    <!-- Map a wildcard URL pattern GET-->
+    <servlet-mapping>
+        <servlet-name>employeeJsp</servlet-name>
+        <url-pattern>/employee/*</url-pattern>
+    </servlet-mapping>
+  
+</web-app>
